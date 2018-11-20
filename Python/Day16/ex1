@@ -1,0 +1,59 @@
+"""
+1. Develop a calculator application using Tkinter. *?+-
+
+TODO: verify why clear button doesnt work
+"""
+
+#!/usr/bin/python
+from tkinter import *
+
+displ=''
+def calchandler(str1):
+    global displ
+    if(str1!='='):
+        displ+=str1
+        t1.set(displ)
+    elif (str1=='='):
+        ans=str(eval(displ))
+        t1.set(ans)
+        displ=ans
+        """
+    elif (str1=='c'):
+        clear=''
+        t1.set(clear)
+        displ=clear
+        print (displ)
+        print (t1)"""
+
+mwin = Tk()
+mwin.title("Python Calculator")
+
+#creating main and button vars
+t1=StringVar()
+e1=Entry(mwin, textvariable=t1)
+b1=Button(mwin, text='1', command=lambda:calchandler('1'))
+b2=Button(mwin, text='2', command=lambda:calchandler('2'))
+b3=Button(mwin, text='3', command=lambda:calchandler('3'))
+b4=Button(mwin, text='4', command=lambda:calchandler('4'))
+badd=Button(mwin, text='+', command=lambda:calchandler('+'))
+bmin=Button(mwin, text='-', command=lambda:calchandler('-'))
+bmul=Button(mwin, text='*', command=lambda:calchandler('*'))
+bdiv=Button(mwin, text='/', command=lambda:calchandler('/'))
+bequal=Button(mwin, text='=', command=lambda:calchandler('='))
+#bclear=Button(mwin, text='C', command=lambda:calchandler('c'))
+
+#creating calc grid structure
+e1.grid(row=0, column=0, columnspan=4)
+b1.grid(row=1, column=0)
+b2.grid(row=1, column=1)
+b3.grid(row=2, column=0)
+b4.grid(row=2, column=1)
+badd.grid(row=1, column=2)
+bmin.grid(row=1, column=3)
+bmul.grid(row=2, column=2)
+bdiv.grid(row=2, column=3)
+bequal.grid(row=3, column=2)
+#bclear.grid(row=3, column=3)
+
+mwin.mainloop()
+
