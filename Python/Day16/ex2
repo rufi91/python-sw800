@@ -1,0 +1,81 @@
+"""
+2. Create a GUI interface for inserting and retrieving data from a MySQL table
+of your choice
+
+TODO:update connection string. create a table. run the program and verify.
+"""
+
+from tkinter import *
+import pymysql as db
+
+mwin=Tk()
+#setup DB connection
+conn= db.connect('localhost', 'ai','ai','ai')
+cur=conn.cursor()
+
+#define handler functions:
+def fetchrows():
+    try:
+        
+        pid=e1.get()
+        name=e2.get()
+        q='SELECT * FROM ai21_personal WHERE (PID=%s AND NAME LIKE %s)'%(pid, name)
+        res=cur.execute(q)
+        for row in res:
+            print (row[0])
+
+    except ValueError:
+        print ("Encountered an error")
+
+def addrows():
+    try:
+        
+        pid=e3.get()
+        name=e4.get()
+        q='INSERT INTO ai21_personal VALUES(%s,%s)'%(pid, name)
+        cur.execute(q)
+        conn.commit()
+        print ("Success!")
+
+    except ValueError:
+        print ("Encountered an error")
+        
+#create the display panel:
+mwin.title("Personal Data Interface")
+
+#fetch
+
+ltitle1=Label(mwin, text="Fetch Records")
+ltitle1.grid(column=1, row=0, columnspan=2)
+
+l1=Label(mwin, text="PID:")
+l1.grid(column=0, row=1)
+l2=Label(mwin, text="Name:")
+l2.grid(column=0, row=2)
+
+e1=Entry(mwin)
+e1.grid(row=1, column=1)
+e2=Entry(mwin)
+e2.grid(row=2, column=1)
+
+bfetch=Button(mwin, text='Fetch', command=fetchrows)
+bfetch.grid(row=5, column=1, columnspan=2)
+
+#add
+ltitle2=Label(mwin, text="Add Records")
+ltitle2.grid(column=1, row=4, columnspan=2)
+
+l3=Label(mwin, text="PID:")
+l3.grid(column=0, row=5)
+l4=Label(mwin, text="Name:")
+l4.grid(column=0, row=5)
+
+e3=Entry(mwin)
+e3.grid(row=5, column=1)
+e4=Entry(mwin)
+e4.grid(row=6, column=1)
+
+badd=Button(mwin, text='Add', command =addrows)
+badd.grid(row=7, column=1, columnspan=2)
+
+mwin.mainloop()
