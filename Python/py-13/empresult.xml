@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+	<employee>
+		<eno>101</eno>
+		<ename>Anil</ename>
+		<edesig>scientist</edesig>
+		<esalary>50000</esalary>
+		<eno>102</eno>
+		<ename>Mary</ename>
+		<edesig>scieltist</edesig>
+		<esalary>55000</esalary>
+		<eno>103</eno>
+		<ename>Raju</ename>
+		<edesig>engineer</edesig>
+		<esalary>60000</esalary>
+		<eno>104</eno>
+		<ename>Ravi</ename>
+		<edesig>engineer</edesig>
+		<esalary>40000</esalary>
+	</employee>
