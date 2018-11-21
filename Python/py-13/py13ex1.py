@@ -9,39 +9,35 @@
    (employee can be made as root node)
    """
 
+
 import xml.dom.minidom as dm
-import pandas as pd
 
-text= pd.read_csv('emp1.csv', delimiter='\t')
-text= text.as_matrix()
-doc=dm.Document()
-e1=doc.createElement('employee')
+f = open("emp.csv")
+
+content = f.readlines()
+elements = content[0].strip().split(',')
 
 
-for i in range(0,text.shape[0]):
+doc = dm.Document()
+
+
+root = doc.createElement('root')
+
+for c in content[1:]:
+    datas = c.strip().split(',')
+    emp = doc.createElement('employee')
+    i=0
+    for data in datas:
+        child = doc.createElement(elements[i])
+        child.appendChild(doc.createTextNode(data))
+        emp.appendChild(child)    
+        i +=1
+    root.appendChild(emp)
     
-    e11=doc.createElement('eno')
-    e12=doc.createElement('ename')
-    e13=doc.createElement('edesig')
-    e14=doc.createElement('esalary')
-    print text[i][0]
+doc.appendChild(root)
 
-    t11=doc.createTextNode(str(text[i][0]))
-    t12=doc.createTextNode(str(text[i][1]))
-    t13=doc.createTextNode(str(text[i][2]))
-    t14=doc.createTextNode(str(text[i][3]))
+fd = open('employee.xml','w')
 
-    e11.appendChild(t11)
-    e12.appendChild(t12)
-    e13.appendChild(t13)
-    e14.appendChild(t14)
-
-    e1.appendChild(e11)
-    e1.appendChild(e12)
-    e1.appendChild(e13)
-    e1.appendChild(e14)
-    doc.appendChild(e1)
+doc.writexml(fd)
 
 
-fd=open('empresult.xml','w')
-doc.writexml(fd, newl='\n', indent='\t', addindent='\t')
