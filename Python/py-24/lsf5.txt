@@ -1,0 +1,14 @@
+,a,b,c,d,f,g,h,i,j
+3,-rw-rw-r--,1,ai21,ai21,0,Dec,3,16:19,lsf1
+4,-rw-rw-r--,1,ai21,ai21,0,Dec,3,16:19,lsf1.txt
+0,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Documents
+1,drwxr-xr-x,2,ai21,ai21,4096,Nov,15,17:13,Downloads
+2,drwxrwxr-x,6,ai21,ai21,4096,Dec,3,15:20,Ex-Rufza
+5,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Music
+6,drwxrwxr-x,5,ai21,ai21,4096,Nov,8,14:13,nltk_data
+7,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Pictures
+8,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Public
+9,drwxrwxr-x,3,ai21,ai21,4096,Nov,15,11:38,R
+10,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Templates
+11,drwxr-xr-x,2,ai21,ai21,4096,Oct,31,13:56,Videos
+12,drwxrwxr-x,7,ai21,ai21,4096,Nov,26,15:28,wekafiles
