@@ -9,10 +9,10 @@ from textblob import TextBlob
 
 
 
-consumer_key="MbYIONYElC2wo79MeCvm8HnOW"
-consumer_secret="hFUyShT1MppDG15k0jOVTmLOQV7VXgtVvpnKPwEiBvCytCYdNB"
-access_token="1070944098897473538-mtapDGclh8gCcwACJ1jt2J0RoyOiWm"
-access_token_secret="t4r5U2PBd9rUldwd7GTaNfP62TtrjCCRU6NT8oeRz3lSm"
+consumer_key=""
+consumer_secret=""
+access_token=""
+access_token_secret=""
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
