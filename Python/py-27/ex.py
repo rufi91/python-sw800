@@ -27,7 +27,7 @@ print drinkobj.sum()['beer_servings'].idxmax()
 
 print "\n\nFor each continent print the statistics(count,mean,std etc.) for wine consumption.:\n",drinkobj.describe()['wine_servings']
 
-print "\n\nPrint the mean alcoohol consumption per continent for every column:\n",drinkobj.mean()['total_litres_of_pure_alcohol']
+print "\n\nPrint the mean alcoohol consumption per continent for every column:\n",drinkobj.mean()
 
 print "\nmedian alcoohol consumption per continent for every column\n", drinkobj.agg('median')
 
