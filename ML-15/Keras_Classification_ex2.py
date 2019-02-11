@@ -2,7 +2,6 @@
 2. Develop a model to do classification in the sonar.csv dataset.
 """
 
-from sklearn.datasets import load_iris
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
