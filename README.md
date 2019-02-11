@@ -1,7 +1,7 @@
 # sw800-Coursework
 Repo to track projects completed in SW800 AI and ML course.
 Topics Include: 
-* ML using python
+* ML using python, R
 * Deep Learning models using Keras and Tensorflow
 * Reinforcement Learning (Q-Learning) on openaigym
 * Python for Data Science
